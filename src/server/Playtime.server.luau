@@ -8,7 +8,7 @@ game.Players.PlayerAdded:Connect(function(player)
 
     local Time = Instance.new("IntValue")
     Time.Name = "Playtime"
-    Time.Value = 0g
+    Time.Value = 0
     Time.Parent = leaderstats
 
     local data
@@ -31,11 +31,5 @@ game.Players.PlayerAdded:Connect(function(player)
     end
 	end)
 
-function resetPlaytime(player)
-    local success, err = pcall(function()
-        TimeDataStore:SetAsync(tostring(player.UserId), 0)
-    end)
-    if not success then
-        warn("Failed to reset playtime data:", err)
-    end
-end
+--[[this code is used to track player playtime in a Roblox game.
+ One function is used to create a leaderstats and other is to reset]]
